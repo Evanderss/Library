@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% block titulo %} Edit book {% endblock titulo %}
 {% block contenido %}
-    <p>Form to edit book</p>
+    <div class="card">
+        <div class="card-header">
+            Edit information about book
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Book data:</h4>
+            {% include "books/form.html" %}
+        </div>
+        <div class="card-footer text-muted">
+            Footer
+        </div>
+    </div>
 {% endblock contenido %}
