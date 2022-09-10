@@ -24,7 +24,7 @@
                             <td>{{ book.id }}</td>
                             <td>{{ book.title }}</td>
                             <td>{{ book.description }}</td>
-                            <td>{{ book.image }}</td>
+                            <td><img src="{{ book.image.url }}" alt="book" height="100"></td>
                             <td>
                                 <a class="btn btn-outline-warning" href="{% url 'edit' %}" role="button">Edit</a>
                                 |
