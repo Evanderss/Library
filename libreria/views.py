@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import book
 from .forms import bookForm
@@ -15,7 +15,10 @@ def books(request):
     return render(request, "books/index.html", {"books" : books})
 
 def create(request):
-    form = bookForm(request.POST or None)
+    form = bookForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        form.save()
+        return redirect("books")
     return render(request, "books/create.html", { "form": form})
 
 def edit(request):
