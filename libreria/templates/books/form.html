@@ -1,9 +1,17 @@
 <form enctype="multipart/form-data" method="post">
   {% csrf_token %}
-  {% for field in form %}
+  {% for campo in form %}
     <div class="mb-3">
-      <label for="" class="form-label">Name:</label>
-      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Name">
+      <label for="" class="form-label">{{ campo.label }}</label>
+      <input 
+      type="{{ campo.field.widget.input_type }}" 
+      class="form-control" 
+      name="{{ campo.name }}" 
+      id="" 
+      aria-describedby="helpId" 
+      placeholder="{{ campo.label }}">
     </div>
-    {% endfor %}
+    <div class="col-12 help-text">{{ campo.errors }}</div>
+  {% endfor %}
+  <input name="" id="" class="btn btn-success" type="submit" value="Submit book">
 </form>
