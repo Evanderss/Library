@@ -19,17 +19,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for book in books %}
                         <tr>
-                            <td>1</td>
-                            <td>Django with Python</td>
-                            <td>Book about framework of Python</td>
-                            <td>Image.jpg</td>
+                            <td>{{ book.id }}</td>
+                            <td>{{ book.title }}</td>
+                            <td>{{ book.description }}</td>
+                            <td>{{ book.image }}</td>
                             <td>
                                 <a class="btn btn-outline-warning" href="{% url 'edit' %}" role="button">Edit</a>
                                 |
                                 <a class="btn btn-outline-danger" href="#" role="button">Delete</a>
                             </td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
