@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'compras.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'libreria',
+        'USER': 'postgres',
+        'PASSWORD': 'evanderss',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
