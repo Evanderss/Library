@@ -28,7 +28,7 @@
                             <td>
                                 <a class="btn btn-outline-warning" href="{% url 'edit' %}" role="button">Edit</a>
                                 |
-                                <a class="btn btn-outline-danger" href="#" role="button">Delete</a>
+                                <a class="btn btn-outline-danger" href="{% url 'delete' book.id %}" role="button">Delete</a>
                             </td>
                         </tr>
                         {% endfor %}
