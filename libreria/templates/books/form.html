@@ -3,6 +3,9 @@
   {% for campo in form %}
     <div class="mb-3">
       <label for="" class="form-label">{{ campo.label }}</label>
+      {% if campo.field.widget.input_type == "file" and campo.value %}
+      <img src="{{MEDIA_URL}}/images/{{campo.value}}" width="100px" alt="" srcset="">
+      {% endif %}
       <input 
       type="{{ campo.field.widget.input_type }}" 
       class="form-control" 
